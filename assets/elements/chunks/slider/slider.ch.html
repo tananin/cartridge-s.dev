@@ -1,0 +1,113 @@
+[[-
+------------------------------------------------------
+Слайдер для сайта
+======================================================
+1. Устанавливаем MIGX
+
+2. Создаём новый TV: slider, тип MIGX
+
+======================================================
+Вкладка формы
+------------------------------------------------------
+[{"caption":"Image", "fields": [
+{"field":"set","caption":"Слайдер"},
+{"field":"link","caption":"Ссылка"},
+{"field":"description","caption":"Текст слайда","inputTVtype":"richtext"},
+{"field":"image","caption":"Изображение","inputTV":"images"}
+]
+}]
+======================================================
+
+
+
+======================================================
+Разметка колонок
+------------------------------------------------------
+[
+{"header": "Слайдер", "sortable": "true", "dataIndex": "set"},
+{"header": "Ссылка", "sortable": "true", "dataIndex": "link"},
+{"header": "Текст слайда", "sortable": "true", "dataIndex": "description"},
+{"header": "Изображение", "sortable": "false", "dataIndex": "image","renderer": "this.renderImage"}
+]
+======================================================
+
+
+
+3. Создаём новый сниппет:  parseMIGXToGallery
+<?php
+    $input = $modx->fromJSON($input);
+$output = array();
+if (!$input || empty($tpl)) return 'no stuff';
+foreach ($input as $row) {
+if (isset($set) && !empty($set) && ($set != $row['set'])) continue;
+$output[] = $modx->getChunk($tpl, $row);
+}
+return implode("\n", $output);
+
+
+4. Создаём шаблон вывода слайда: slider__tpl
+Шаблон вывода изображения в слайдере
+caption
+[[~[[+link]]]]
+[[+image]]
+[[+description]]
+[[+description:htmlentities]]
+
+<li>
+    <a href="[[~[[+link]]]]"><img  src="[[+image]]" alt="" /></a>
+</li>
+
+
+5. Вызываем наш слайдер, Примеры:
+------------------------------------------------------
+<!--Вызов слайдера с текущей страницы-->
+[[
+parseMIGXToGallery?
+&tpl=`slider__tpl`
+&input=`[[*slider]]`
+&set=`index`
+]]
+
+<!-- Слайдер со страницы настроек сайта -->
+[[parseMIGXToGallery?
+&tpl=`slider-foto__tpl`
+&input=`[[#2.slider]]`
+&set=`foto`
+]]
+
+======================================================
+]]
+
+<div class="view-content">
+
+    <div class="skin-default">
+
+        <div id="views_slideshow_cycle_main_Slideshow-block" class="views_slideshow_cycle_main views_slideshow_main">
+            <div id="views_slideshow_cycle_teaser_section_Slideshow-block"
+                 class="views-slideshow-cycle-main-frame views_slideshow_cycle_teaser_section">
+
+                [[!parseMIGXToGallery?
+                &tpl=`slider__tpl`
+                &input=`[[#1.slider]]`
+                &set=`1`
+                ]]
+
+
+                
+            </div>
+        </div>
+        <div class="views-slideshow-controls-bottom clearfix">
+            <div id="views_slideshow_controls_text_Slideshow-block"
+                 class="views-slideshow-controls-text views_slideshow_controls_text">
+                <span id="views_slideshow_controls_text_previous_Slideshow-block"
+                      class="views-slideshow-controls-text-previous views_slideshow_controls_text_previous"><a href="#">Назад</a></span>
+                <span id="views_slideshow_controls_text_pause_Slideshow-block"
+                      class="views-slideshow-controls-text-pause views_slideshow_controls_text_pause"><a
+                        href="#">Пауза</a></span>
+                <span id="views_slideshow_controls_text_next_Slideshow-block"
+                      class="views-slideshow-controls-text-next views_slideshow_controls_text_next"><a
+                        href="#">Далее</a></span>
+            </div>
+        </div>
+    </div>
+</div>

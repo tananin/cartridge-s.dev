@@ -1,0 +1,83 @@
+[[-
+-------------------------------------------------------------------------------------------------------
+Шаблон одной новости
+[[$articles__tpl]]              Чанк
+-------------------------------------------------------------------------------------------------------
+
+
+Плэйсхолдеры:
+-------------------------------------------------------------------------------------------------------
+[[~[[+id]]]]                                            Ссылка на новость
+[[+pagetitle]]                                          Заголовок новости
+[[+publishedon:date=`%d.%m.%Y • %R`]]                   Дата публикцации
+[[+content:notags:limit=`100`]]                         Контент, обрезанный, без тэгов
+[[+introtext]]                                          Анотация
+=======================================================================================================
+
+C условиями:
+-------------------------------------------------------------------------------------------------------
+Вывод анотации если она есть, если нет то обрезанный до 100 символов контента
+[[+introtext:default=`[[+content:notags:limit=`100`]]`]]
+=======================================================================================================
+
+TV:
+-------------------------------------------------------------------------------------------------------
+[[+tv.images]]                                        TV поле images
+[[+tv.images:phpthumbon=`w=202&h=96&zc=1`]]           TV c обрезкой изображения
+
+=======================================================================================================
+]]
+
+
+<div class="views-row views-row-1 views-row-odd views-row-first">
+    <div id="article-48" class="article node node-article node-promoted node-teaser node-lang-ru node-odd node-teaser clearfix">
+        <div class="header article-header">
+            <h2 class="node-title">
+                <a href="[[~[[+id]]]]">[[+pagetitle]]</a>
+            </h2>
+        </div>
+
+        <div class="footer submitted">
+            Опубликовано <span class="username">admin</span> в <span class="time pubdate" title="2015-04-19T08:22:52+03:00">[[+publishedon:date=`%d.%m.%Y • %R`]]</span>    </div>
+
+        <div class="node-content">
+            <div class="section field field-name-field-image field-type-image field-label-hidden"><div class="field-items"><div class="field-item odd"><a href="[[~[[+id]]]]"><img src="[[+tv.images]] " width="120" height="120" alt="[[+pagetitle]]"></a></div></div></div><div class="section field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item odd">
+
+            [[+introtext:default=`[[+content:notags:limit=`500`]]`]]...</p>
+        </div></div></div>
+            <div class="field field-name-field-tags field-type-taxonomy-term-reference field-label-inline clearfix clearfix">
+                <p class="field-label">Теги:&nbsp;</p>
+                <ul class="field-items">
+
+                    [[!toLinks?
+                    &items=`[[+tv.tag]]`
+                    &target=`17`
+                    &tpl=`tag-list__tpl`
+                    ]]
+
+
+                    <!--
+                    <li class="field-item even">
+                        <a href="/tag/%D0%BA%D0%B0%D1%80%D1%82%D1%80%D0%B8%D0%B4%D0%B6">картридж</a>      </li>
+                    <li class="field-item odd">
+                        <a href="/tag/%D1%81%D0%BA%D1%83%D0%BF%D0%BA%D0%B0">скупка</a>      </li>
+                    <li class="field-item even">
+                        <a href="/tag/samsung">Samsung</a>      </li>
+                    <li class="field-item odd">
+                        <a href="/tag/samung">Самунг</a>      </li>
+                    <li class="field-item even">
+                        <a href="/tag/%D0%B4%D0%BE%D1%80%D0%BE%D0%B3%D0%BE">дорого</a>      </li>
+                    <li class="field-item odd">
+                        <a href="/tag/%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D1%82%D1%8C">продать</a>      </li>
+
+                        -->
+                </ul>
+            </div>
+        </div>
+
+        <div class="menu node-links clearfix"><ul class="links inline"><li class="node-readmore first"><a href="[[~[[+id]]]]" rel="tag" title="[[+pagetitle]]">Читать далее <span class="element-invisible"> о [[+pagetitle]]</span></a></li>
+
+        </ul></div>
+
+    </div>
+</div>

@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru" dir="ltr">
+<head>
+    [[$s-head]]
+</head>
+
+<body class="html front not-logged-in two-sidebars page-node tb-rave fixed-grid bf-a fs-small">
+<div id="skip-link"><a href="#main-content" class="element-invisible element-focusable">Перейти к основному содержанию</a></div>
+
+<div id="page" class="page-default"> <a name="Top" id="Top"></a>
+    [[$nav-main]]
+
+    <!-- HEADER -->
+    <div id="header-wrapper" class="wrapper">
+        <div class="container grid-24">
+            <div class="grid-inner clearfix">
+                <div id="header" class="clearfix">
+
+                    <a href="/" title="Главная" id="logo">
+                        <img src="[[++logotype]]" alt="Главная" />
+                    </a>
+
+
+                    <div class="region region-header">
+                        Тел.: [[++phone]],
+                        Email: [[++emailsender]]  </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //HEADER -->
+
+    <div id="main-wrapper" class="wrapper">
+        <div class="container grid-24 clearfix">
+
+            <div class="container-inner clearfix group-cols-2 group-16 grid grid-16 ">
+                <!-- SLIDESHOW -->
+                <div id="slideshow-wrapper" class="wrapper">
+                    <div class="grid-inner clearfix">   <div class="region region-slideshow">
+                        <div id="block-views-slideshow-block" class="block block-views slideshow">
+                            <div class="block-inner clearfix">
+
+
+
+                                <div class="block-content clearfix">
+                                    <div class="view view-Slideshow view-id-Slideshow view-display-id-block view-dom-id-c1f293427b7683e08ca815af0a26806a">
+                                        [[$slider]]
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <!-- //SLIDESHOW -->
+
+                <div class="container-inner clearfix group-cols-2 group-16 grid grid-16 ">
+
+                    <div id="main-content-wrapper" class="group-cols-1 group-11 grid grid-11">
+                        <!-- MAIN CONTENT -->
+                        <div id="main-content" class="grid grid-11 section">
+                            <div class="grid-inner clearfix">
+                                <h1 id="page-title">[[*longtitle:default=`[[*pagetitle]]`]]</h1>
+                                <div class="region region-content">
+                                    <div id="block-system-main" class="block-system">
+                                        <div class="block-inner clearfix">
+
+
+                                            <div class="block-content clearfix">
+                                                <div id="article-49"
+                                                     class="article node node-page node-lang-ru node-odd node-full clearfix">
+
+
+
+                                                    <div class="node-content">
+
+                                                        [[If? &subject=`[[*images]]` &operator=`notempty` &then=`
+                                                        <div class="section field field-name-field-img field-type-image field-label-hidden">
+                                                            <div class="field-items">
+                                                                <div class="field-item odd">
+                                                                    <img src="[[*images]]" width="120" height="120" alt="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        `]]
+
+
+                                                        <div class="section field field-name-body field-type-text-with-summary field-label-hidden">
+                                                            <div class="field-items">
+                                                                <div class="field-item odd">
+
+                                                                    [[$content]]
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //MAIN CONTENT -->
+
+                        <!-- MASS BOTTOM -->
+                        <!-- //MASS BOTTOM -->
+
+                    </div>
+                    <!-- SIDEBAR SECOND -->
+                    <div id="sidebar-second-wrapper" class="sidebar tb-main-box grid grid-5">
+                        <div class="grid-inner clearfix">   <div class="region region-sidebar-second">
+                            <div id="block-system-main-menu--2" class="block block-system block-menu">
+                                <div class="block-inner clearfix">
+
+                                    <h2 class="block-title">Главное меню</h2>
+
+
+                                    <div class="block-content clearfix">
+                                        [[$nav-sidebar]]
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <!-- //SIDEBAR SECOND -->
+                </div>
+            </div>
+            <!-- SIDEBAR FIRST -->
+            [[$s-sidebar__right]]
+            <!-- //SIDEBAR FIRST -->
+        </div>
+    </div>
+
+    <!-- PANEL FIRST -->
+    <div id="panel-first-wrapper" class="wrapper panel panel-first">
+        <div class="container grid-24 clearfix"> <div class="panel-column panel-first-1 panel-column-first grid grid-6">
+            <div class="grid-inner clearfix">
+                <div class="region region-panel-first-1">
+                    <div id="block-block-2--2" class="block block-block">
+                        <div class="block-inner clearfix">
+
+                            <h2 class="block-title">О нас</h2>
+
+
+                            <div class="block-content clearfix">
+                                [[++footer__onas]]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="panel-column panel-first-2 grid grid-6">
+                <div class="grid-inner clearfix">
+                    <div class="region region-panel-first-2">
+                        <div id="block-block-3--2" class="block block-block">
+                            <div class="block-inner clearfix">
+
+                                <h2 class="block-title">График работы</h2>
+
+
+                                <div class="block-content clearfix">
+                                    [[++footer__graphik]]
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-column panel-first-3 grid grid-6">
+                <div class="grid-inner clearfix">
+                    <div class="region region-panel-first-3">
+                        <div id="block-block-4--2" class="block block-block">
+                            <div class="block-inner clearfix">
+
+                                <h2 class="block-title">Не только картриджи</h2>
+
+
+                                <div class="block-content clearfix">
+                                    [[++footer__netolko]]
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-column panel-first-4 panel-column-last grid grid-6">
+                <div class="grid-inner clearfix">
+                    <div class="region region-panel-first-4">
+                        <div id="block-block-5--2" class="block block-block">
+                            <div class="block-inner clearfix">
+
+                                <h2 class="block-title">Контакты</h2>
+
+
+                                <div class="block-content clearfix">
+                                    <p>Вы можете связаться с нами.</p>
+                                    <ul class="contact-info">
+                                        <li><strong>Тел.: </strong>[[++phone]]</li>
+                                        <li><strong>Email: </strong> <a href="mailto:[[++emailsender]]">[[++emailsender]]</a></li>
+                                    </ul>
+
+                                    [[++counter_yandex]]
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> </div>
+    </div>
+    <!-- //PANEL FIRST -->
+   [[$s-footer]]
+</div>
+</body>
+</html>

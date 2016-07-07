@@ -1,0 +1,42 @@
+<div class="b-news" id="news__slider">
+    <div class="b-news__slider">
+
+
+
+        [[!pdoResources?
+            &tpl=`news__slider--tpl`
+            &limit=`5`
+            &parents=`23`
+        ]]
+
+    </div>
+    <div class="b-news__title">
+        <a href="[[~23]]">Новости:</a>
+    </div>
+    <div class="b-news__control b-news__control_left"></div>
+    <div class="b-news__control b-news__control_right"></div>
+</div>
+<div class="b-wide-shadow">
+    <div class="b-wide-shadow__before"></div>
+    <div class="b-wide-shadow__after"></div>
+</div>
+<script>
+    $(document).ready(function(){
+        $('#news__slider').jcarousel({
+            //'items': '.b-news__item'
+            wrap: 'circular'
+        });
+
+        $('.b-news__control_left')
+                .jcarouselControl({
+                    target: '-=1'
+                });
+
+        $('.b-news__control_right')
+                .jcarouselControl({
+                    target: '+=1'
+                });
+
+        //$('.b-news__control_right').click(function(){alert('!')});
+    });
+</script>

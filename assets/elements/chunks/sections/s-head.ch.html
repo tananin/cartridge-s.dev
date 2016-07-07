@@ -1,0 +1,431 @@
+[[-
+-------------------------------------------------------------------------------------------------------
+HEAD
+-------------------------------------------------------------------------------------------------------
+
+Шпаргалка
+-------------------------------------------------------------------------------------------------------
+[[++modx_charset]]            Кодировка
+
+[[++site_name]]               Название сайта
+[[++site_slogan]]             Слоган сайта
+[[++favicon]]                 Favicon
+
+[[++site_url]]                URL главной стр.
+[[*pagetitle]]                Заголовок страницы
+
+[[++viewport]]                Адаптивная ширина
+[[++favicon]]                 Фавикон
+
+=======================================================================================================
+
+<!-- Основное -->
+<meta http-equiv="Content-Type" content="type; charset=[[++modx_charset]]"/>
+<link rel="shortcut icon" href="[[++site_url]][[++favicon]]" type="image/png"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="[[++viewport]]" />
+<base href="[[++site_url]]" />
+
+
+<!--CDN-->
+<!--JQuery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!--Bootstrap-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<!--Foundation-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.css">
+<script src="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.js"></script>
+
+
+<!--SEO-->
+[[If?&subject=`[[++seo_title]]`&operator=`notempty`&then=`<title>[[++seo_title]]</title>`&else=`<title>[[++seo_title]]</title>`]]
+[[If?&subject=`[[++seo_keywords]]`&operator=`notempty`&then=`<meta name="Keywords" content="[[++seo_keywords]]"/>`&else=``]]
+[[If?&subject=`[[++seo_description]]`&operator=`notempty`&then=`<meta name="Description" content="[[++seo_description]]"/>`&else=``]]
+[[If? &subject=`[[++seo_noindex]]` &operator=`EQ` &operand=`1` &then=`<meta name="robots" content="noindex, nofollow"/>` &else=``]]
+
+
+<!--Open Graph-->
+<meta property="og:image" content="[[If?&subject=`[[*og__image]]`&operator=`notempty`&then=`[[++site_url]][[*og__image:phpthumbon=`w=200&h=200&rc=1`]]`&else=`[[++site_url]][[#[[++setting]].site__logotip:phpthumbon=`w=200&h=200&rc=1`]]`]]"/>
+<meta property="og:site_name" content="[[*og__name]]"/>
+<meta property="og:title" content="[[If?&subject=`[[*og__title]]`&operator=`notempty`&then=`[[*og__title]]`&else=`[[*pagetitle]]`]]"/>
+<meta property="og:description" content="[[If?&subject=`[[*og__description]]`&operator=`notempty`&then=`[[*og__description]]`&else=`[[#[[++setting]].site__slogan]]`]]" />
+<meta property="og:url" content="[[~[[*id]]? &scheme=`full`]]"/>
+<meta property="og:type" content="[[*og__type]]"/>
+
+<!--Style и HEAD -->
+[[If? &subject=`[[*head]]` &operator=`notempty` &then=`[[*head]]`&else=``]]
+[[If? &subject=`[[*style]]` &operator=`notempty` &then=`<style>[[*style]]</style>`&else=``]]
+
+<!-- End HEAD-->
+=======================================================================================================
+]]
+
+<!-- Основное -->
+<meta http-equiv="Content-Type" content="type; charset=[[++modx_charset]]"/>
+<link rel="shortcut icon" href="[[++site_url]][[++favicon]]" type="image/png"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="[[++viewport]]" />
+<base href="[[++site_url]]" />
+
+<!--SEO-->
+[[If?&subject=`[[++seo_title]]`&operator=`notempty`&then=`<title>[[++seo_title]]</title>`&else=`<title>[[++seo_title]]</title>`]]
+[[If?&subject=`[[++seo_keywords]]`&operator=`notempty`&then=`<meta name="Keywords" content="[[++seo_keywords]]"/>`&else=``]]
+[[If?&subject=`[[++seo_description]]`&operator=`notempty`&then=`<meta name="Description" content="[[++seo_description]]"/>`&else=``]]
+[[If? &subject=`[[++seo_noindex]]` &operator=`EQ` &operand=`1` &then=`<meta name="robots" content="noindex, nofollow"/>` &else=``]]
+
+
+
+<link rel="canonical" href="[[++site_url]]" />
+<link rel="shortlink" href="[[++site_url]]" />
+
+
+<style type="text/css" media="all">
+    @import url("assets/style/css/system.base.css");
+    @import url("assets/style/css/system.menus.css");
+    @import url("assets/style/css/system.messages.css");
+    @import url("assets/style/css/system.theme.css");
+    @import url("assets/nucleus/css/base.css");
+</style>
+<style type="text/css" media="all">
+    @import url("assets/style/css/aggregator.css");
+    @import url("assets/style/css/comment.css");
+    @import url("assets/style/css/field.css");
+    @import url("assets/style/css/node.css");
+    @import url("assets/style/css/poll.css");
+    @import url("assets/style/css/search.css");
+    @import url("assets/style/css/user.css");
+</style>
+<style type="text/css" media="all">
+    @import url("assets/style/css/colorbox_style.css");
+    @import url("assets/style/css/ctools.css");
+    @import url("assets/style/css/superfish.css");
+    @import url("assets/style/css/superfish-vertical.css");
+    @import url("assets/style/css/superfish-navbar.css");
+    @import url("assets/style/css/views_slideshow.css");
+    @import url("assets/style/css/default.css");
+    @import url("assets/style/css/views_slideshow_controls_text.css");
+    @import url("assets/style/css/contrib/views_slideshow_cycle/views_slideshow_cycle.css");
+    @import url("assets/style/css/openid.css");
+    @import url("assets/style/css/basic.css");
+    @import url("assets/style/css/quicktabs.css");
+    @import url("assets/tb_rave/css/views.css");
+</style>
+<style type="text/css" media="all">
+    @import url("assets/nucleus/css/messages.css");
+    @import url("assets/tb_rave/css/html-elements.css");
+    @import url("assets/tb_rave/css/forms.css");
+    @import url("assets/tb_rave/css/page.css");
+    @import url("assets/tb_rave/css/articles.css");
+    @import url("assets/tb_rave/css/comments.css");
+    @import url("assets/tb_rave/css/forum.css");
+    @import url("assets/tb_rave/css/fields.css");
+    @import url("assets/tb_rave/css/blocks.css");
+    @import url("assets/tb_rave/css/navigation.css");
+    @import url("assets/tb_rave/css/fonts.css");
+    @import url("assets/tb_rave/css/css3.css");
+</style>
+<style type="text/css" media="print">
+    @import url("assets/tb_rave/css/print.css");
+</style>
+<style type="text/css" media="all">
+    @import url("assets/tb_rave/css/superfish/rave.css");
+    @import url("assets/tb_rave/css/quicktabs/rave.css");
+</style>
+
+<!--[if IE 7]>
+<style type="text/css" media="all">
+    @import url("assets/nucleus/css/ie7.css");
+</style>
+<![endif]-->
+
+<!--[if IE]>
+<style type="text/css" media="all">
+    @import url("assets/nucleus/css/ie.css");
+    @import url("assets/tb_rave/css/ie.css");
+</style>
+<![endif]-->
+
+<!--[if IE 7]>
+<style type="text/css" media="all">
+    @import url("assets/tb_rave/css/ie7.css");
+</style>
+<![endif]-->
+<style type="text/css" media="all">
+    <!--/*--><![CDATA[/*><!--*/
+    div.container {
+        width: 960px;
+    }
+
+    .grid-1 {
+        width: 40px;
+    }
+
+    .grid-2 {
+        width: 80px;
+    }
+
+    .grid-3 {
+        width: 120px;
+    }
+
+    .grid-4 {
+        width: 160px;
+    }
+
+    .grid-5 {
+        width: 200px;
+    }
+
+    .grid-6 {
+        width: 240px;
+    }
+
+    .grid-7 {
+        width: 280px;
+    }
+
+    .grid-8 {
+        width: 320px;
+    }
+
+    .grid-9 {
+        width: 360px;
+    }
+
+    .grid-10 {
+        width: 400px;
+    }
+
+    .grid-11 {
+        width: 440px;
+    }
+
+    .grid-12 {
+        width: 480px;
+    }
+
+    .grid-13 {
+        width: 520px;
+    }
+
+    .grid-14 {
+        width: 560px;
+    }
+
+    .grid-15 {
+        width: 600px;
+    }
+
+    .grid-16 {
+        width: 640px;
+    }
+
+    .grid-17 {
+        width: 680px;
+    }
+
+    .grid-18 {
+        width: 720px;
+    }
+
+    .grid-19 {
+        width: 760px;
+    }
+
+    .grid-20 {
+        width: 800px;
+    }
+
+    .grid-21 {
+        width: 840px;
+    }
+
+    .grid-22 {
+        width: 880px;
+    }
+
+    .grid-23 {
+        width: 920px;
+    }
+
+    .grid-24 {
+        width: 960px;
+    }
+
+    /*]]>*/-->
+</style>
+
+<script type="text/javascript" src="assets/style/js/jquery.js"></script>
+<script type="text/javascript" src="assets/style/js/jquery.once.js"></script>
+<script type="text/javascript" src="assets/style/js/drupal.js"></script>
+<script type="text/javascript" src="assets/style/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="assets/style/js/progress.js"></script>
+<script type="text/javascript" src="assets/style/js/ru_D30uhg51ZhQFpIXkBGAqAFUaVKSdoKcoj6o9sv51Xbk.js"></script>
+<script type="text/javascript" src="assets/style/js/jquery.colorbox-min.js"></script>
+<script type="text/javascript" src="assets/style/js/colorbox.js"></script>
+<script type="text/javascript" src="assets/style/js/colorbox_style.js"></script>
+<script type="text/javascript" src="assets/style/js/jquery.hoverIntent.minified.js"></script>
+<script type="text/javascript" src="assets/style/js/jquery.bgiframe.min.js"></script>
+<script type="text/javascript" src="assets/style/js/superfish.js"></script>
+<script type="text/javascript" src="assets/style/js/supersubs.js"></script>
+<script type="text/javascript" src="assets/style/js/supposition.js"></script>
+<script type="text/javascript" src="assets/style/js/sftouchscreen.js"></script>
+<script type="text/javascript" src="assets/style/js/views_slideshow.js"></script>
+<script type="text/javascript" src="assets/style/js/jquery.cycle.all.min.js"></script>
+<script type="text/javascript" src="assets/style/js/views_slideshow_cycle.js"></script>
+<script type="text/javascript">
+    <!--//--><![CDATA[//><!--
+
+    (function ($) {
+        if (Drupal.Nucleus == undefined) {
+            Drupal.Nucleus = {};
+        }
+        Drupal.behaviors.skinMenuAction = {
+            attach: function (context) {
+                jQuery(".change-skin-button").click(function() {
+                    parts = this.href.split("/");
+                    style = parts[parts.length - 1];
+                    jQuery.cookie("nucleus_skin", style, {path: "/"});
+                    window.location.reload();
+                    return false;
+                });
+            }
+        }
+    })(jQuery);
+
+    //--><!]]>
+</script>
+<script type="text/javascript" src="assets/style/js/openid.js"></script>
+<script type="text/javascript" src="assets/style/js/quicktabs.js"></script>
+<script type="text/javascript">
+    <!--//--><![CDATA[//><!--
+    jQuery(function(){
+        jQuery('#superfish-1').supersubs({minWidth: 12, maxWidth: 27, extraWidth: 1}).superfish({
+            animation: {opacity:'show'},
+            speed: 'fast',
+            autoArrows: true,
+            dropShadows: true});
+    });
+    //--><!]]>
+</script>
+<script type="text/javascript" src="assets/nucleus/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="assets/tb_rave/js/tb_rave.js"></script>
+<script type="text/javascript">
+    <!--//--><![CDATA[//><!--
+    jQuery.extend(Drupal.settings, {
+        "basePath": "\/",
+        "pathPrefix": "",
+        "ajaxPageState": {
+            "theme": "tb_rave",
+            "theme_token": "7JVobw7qah-rMBq3zDf-45YpdhMGunLUIW_HHsq4wvM"
+        },
+        "colorbox": {
+            "opacity": "0.85",
+            "current": "{current} of {total}",
+            "previous": "\u00ab Prev",
+            "next": "\u0421\u043b\u0435\u0434\u0443\u044e\u0449\u0438\u0439 \u00bb",
+            "close": "\u0417\u0430\u043a\u0440\u044b\u0442\u044c",
+            "maxWidth": "98%",
+            "maxHeight": "98%",
+            "fixed": true
+        },
+        "viewsSlideshow": {
+            "Slideshow-block": {
+                "methods": {
+                    "goToSlide": ["viewsSlideshowPager", "viewsSlideshowSlideCounter", "viewsSlideshowCycle"],
+                    "nextSlide": ["viewsSlideshowPager", "viewsSlideshowSlideCounter", "viewsSlideshowCycle"],
+                    "pause": ["viewsSlideshowControls", "viewsSlideshowCycle"],
+                    "play": ["viewsSlideshowControls", "viewsSlideshowCycle"],
+                    "previousSlide": ["viewsSlideshowPager", "viewsSlideshowSlideCounter", "viewsSlideshowCycle"],
+                    "transitionBegin": ["viewsSlideshowPager", "viewsSlideshowSlideCounter"],
+                    "transitionEnd": []
+                }, "paused": 0
+            }
+        },
+        "viewsSlideshowControls": {"Slideshow-block": {"bottom": {"type": "viewsSlideshowControlsText"}}},
+        "viewsSlideshowCycle": {
+            "#views_slideshow_cycle_main_Slideshow-block": {
+                "num_divs": 3,
+                "id_prefix": "#views_slideshow_cycle_main_",
+                "div_prefix": "#views_slideshow_cycle_div_",
+                "vss_id": "Slideshow-block",
+                "effect": "fade",
+                "transition_advanced": 0,
+                "timeout": 5000,
+                "speed": 700,
+                "delay": 0,
+                "sync": 1,
+                "random": 0,
+                "pause": 1,
+                "pause_on_click": 0,
+                "action_advanced": 0,
+                "start_paused": 0,
+                "remember_slide": 0,
+                "remember_slide_days": 1,
+                "pause_when_hidden": 0,
+                "pause_when_hidden_type": "full",
+                "amount_allowed_visible": "",
+                "nowrap": 0,
+                "fixed_height": 1,
+                "items_per_slide": 1,
+                "wait_for_image_load": 1,
+                "wait_for_image_load_timeout": 3000,
+                "cleartype": 0,
+                "cleartypenobg": 0,
+                "advanced_options": "{}"
+            }
+        },
+        "quicktabs": {
+            "qt_quicktabs": {
+                "name": "quicktabs",
+                "tabs": [{
+                    "bid": "views_delta_latest_post-block",
+                    "hide_title": 1
+                }, {
+                    "bid": "views_delta_popular_post-block",
+                    "hide_title": 1
+                }, {
+                    "bid": "views_delta_latest_post-block",
+                    "hide_title": 1
+                }, {"bid": "views_delta_popular_post-block", "hide_title": 1}],
+                "viewsSlideshowCycle": {
+                    "#views_slideshow_cycle_main_Slideshow-block": {
+                        "num_divs": 3,
+                        "id_prefix": "#views_slideshow_cycle_main_",
+                        "div_prefix": "#views_slideshow_cycle_div_",
+                        "vss_id": "Slideshow-block",
+                        "effect": "fade",
+                        "transition_advanced": 0,
+                        "timeout": 5000,
+                        "speed": 700,
+                        "delay": 0,
+                        "sync": 1,
+                        "random": 0,
+                        "pause": 1,
+                        "pause_on_click": 0,
+                        "action_advanced": 0,
+                        "start_paused": 0,
+                        "remember_slide": 0,
+                        "remember_slide_days": 1,
+                        "pause_when_hidden": 0,
+                        "pause_when_hidden_type": "full",
+                        "amount_allowed_visible": "",
+                        "nowrap": 0,
+                        "fixed_height": 1,
+                        "items_per_slide": 1,
+                        "wait_for_image_load": 1,
+                        "wait_for_image_load_timeout": 3000,
+                        "cleartype": 0,
+                        "cleartypenobg": 0,
+                        "advanced_options": "{}"
+                    }
+                }
+            }
+        },
+        "urlIsAjaxTrusted": {"\/node?destination=node": true}
+    });
+    //--><!]]>
+</script>
